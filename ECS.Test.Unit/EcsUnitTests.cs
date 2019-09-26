@@ -387,18 +387,18 @@ namespace ECS.Test.Unit
         }
 
 
-        public void ThresholdsSub_InvalidUpperTemperatureThresholdSet_ArgumentExceptionThrown()
+        [Test]
+        public void ThresholdsSub_InvalidUpperTemperatureThresholdSet_ExceptionsThrown()
         {
-            // Check that it throws when upper is illegal
-            // First parameter is a lambda expression, implicitly acting
-            Assert.That(() => { _uutsub.UpperTemperatureThreshold = 24; }, Throws.TypeOf<ArgumentException>());
+            // Check that it throws
+            Assert.That(() => { _uutsub.UpperTemperatureThreshold = 10; }, Throws.TypeOf<ArgumentException>());
         }
 
-        public void ThresholdsSub_InvalidLowerTemperatureThresholdSet_ArgumentExceptionThrown()
+        [Test]
+        public void ThresholdsSub_InvalidLowerTemperatureThresholdSet_ExceptionsThrown()
         {
-            // Check that it throws when lower is illegal
-            // First parameter is a lambda expression, implicitly acting
-            Assert.That(() => { _uut.LowerTemperatureThreshold = 29; }, Throws.TypeOf<ArgumentException>());
+            // Check that it throws
+            Assert.That(() => { _uutsub.LowerTemperatureThreshold = 45; }, Throws.TypeOf<ArgumentException>());
         }
         #endregion
     }
