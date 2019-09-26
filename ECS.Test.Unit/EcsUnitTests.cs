@@ -72,22 +72,6 @@ namespace ECS.Test.Unit
             // First parameter is a lambda expression, implicitly acting
             Assert.That(() => { _uut.LowerTemperatureThreshold = _uut.UpperTemperatureThreshold; }, Throws.Nothing);
         }
-
-
-        public void Thresholds_InvalidUpperTemperatureThresholdSet_ArgumentExceptionThrown()
-        {
-            // Check that it throws when upper is illegal
-            // First parameter is a lambda expression, implicitly acting
-            Assert.That(() => { _uut.UpperTemperatureThreshold = 24; }, Throws.TypeOf<ArgumentException>());
-        }
-
-        public void Thresholds_InvalidLowerTemperatureThresholdSet_ArgumentExceptionThrown()
-        {
-            // Check that it throws when lower is illegal
-            // First parameter is a lambda expression, implicitly acting
-            Assert.That(() => { _uut.LowerTemperatureThreshold = 29; }, Throws.TypeOf<ArgumentException>());
-        }
-
         #endregion
 
         #region Regulation tests
